@@ -1,0 +1,91 @@
+// =============================================
+// LIGHT THEME
+// =============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.theme-light {
+  // CSS Custom Properties for Light Theme
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --background-color: #{$light-bg};
+  --text-color: #{$light-text};
+  --card-background: #{$light-card-bg};
+  --shadow: #{$light-shadow};
+  --border-color: #{$light-border};
+
+  // Body styles
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  // Navigation
+  .navbar {
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+
+    .navbar-brand {
+      color: var(--primary-color);
+    }
+
+    .nav-link {
+      color: var(--primary-color);
+
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  // Cards and Components
+  .card, .box, .cards {
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+    border-radius: $border-radius-lg;
+  }
+
+  // Buttons
+  .button {
+    &.primary {
+      @include button-primary;
+    }
+
+    &.secondary {
+      @include button-secondary;
+    }
+  }
+
+  // Form elements
+  input, textarea {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+
+    &::placeholder {
+      color: $color-midgray;
+    }
+  }
+
+  // Modal
+  .modal {
+    background: rgba(236, 240, 243, 0.95);
+
+    .modal-content {
+      background: var(--card-background);
+      box-shadow: var(--shadow);
+    }
+  }
+
+  // Theme toggle
+  .theme-toggle {
+    .light-span {
+      display: none;
+    }
+
+    .dark-span {
+      display: inline;
+    }
+  }
+}

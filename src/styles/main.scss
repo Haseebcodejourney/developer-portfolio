@@ -1,0 +1,26 @@
+// =============================================
+// MAIN STYLESHEET
+// =============================================
+
+// Variables and mixins
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base styles
+@use 'base/base';
+
+// Themes
+@use 'themes/light-theme';
+@use 'themes/dark-theme';
+
+// Component styles
+@use 'components/header';
+@use 'components/hero';
+@use 'components/features';
+@use 'components/portfolio';
+@use 'components/clients';
+@use 'components/contact';
+@use 'components/modal';
+@use 'components/footer';
+@use 'components/animations';
+

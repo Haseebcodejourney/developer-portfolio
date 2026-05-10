@@ -1,0 +1,119 @@
+// =============================================
+// DARK THEME
+// =============================================
+
+@use 'sass:color';
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.theme-dark {
+  // CSS Custom Properties for Dark Theme
+  --primary-color: #{$dark-text};
+  --secondary-color: #{$dark-secondary};
+  --background-color: #{$dark-bg};
+  --text-color: #{$dark-text};
+  --card-background: #{$dark-card-bg};
+  --shadow: #{$dark-shadow};
+  --border-color: #{$dark-border};
+
+  // Body styles
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  // Navigation
+  .navbar {
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+
+    .navbar-brand {
+      color: var(--text-color);
+    }
+
+    .nav-link {
+      color: $color-lightn;
+
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  // Cards and Components
+  .card, .box, .cards {
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+    border-radius: $border-radius-lg;
+  }
+
+  // Buttons
+  .button {
+    &.primary {
+      @include button-primary;
+      background-color: var(--secondary-color);
+
+      &:hover:not(:disabled) {
+        background-color: color.adjust($dark-secondary, $lightness: 10%);
+      }
+    }
+
+    &.secondary {
+      @include button-secondary;
+      color: var(--text-color);
+      border-color: $color-lightn;
+
+      &:hover:not(:disabled) {
+        background-color: $color-lightn;
+        color: var(--background-color);
+      }
+    }
+  }
+
+  // Form elements
+  input, textarea {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+
+    &::placeholder {
+      color: $color-midgray;
+    }
+  }
+
+  // Modal
+  .modal {
+    background: rgba(33, 36, 40, 0.95);
+
+    .modal-content {
+      background: var(--card-background);
+      box-shadow: var(--shadow);
+    }
+  }
+
+  // Theme toggle
+  .theme-toggle {
+    .dark-span {
+      display: none;
+    }
+
+    .light-span {
+      display: inline;
+    }
+  }
+
+  // Additional dark theme specific styles
+  .social-share-inner-left span,
+  .eyebrow,
+  .project-type {
+    color: $color-subtitle;
+  }
+
+  .timeline-item p {
+    color: $color-lightn;
+  }
+
+  .timeline-item strong {
+    color: var(--text-color);
+  }
+}

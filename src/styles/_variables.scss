@@ -1,0 +1,85 @@
+// =============================================
+// VARIABLES
+// =============================================
+
+// Colors
+$primary-color: #3c3e41;
+$secondary-color: #ff014f;
+$accent-color: #ff014f;
+
+// Light Theme Colors
+$light-bg: #ECF0F3;
+$light-text: #3c3e41;
+$light-card-bg: linear-gradient(145deg, #e2e8ec, #ffffff);
+$light-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+$light-border: #D1D9E6;
+
+// Dark Theme Colors
+$dark-bg: #212428;
+$dark-text: #ffffff;
+$dark-secondary: #d11414;
+$dark-card-bg: linear-gradient(145deg, #1e2024, #23272b);
+$dark-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+$dark-border: #1a1d23;
+
+// Neutral Colors
+$color-midgray: #878787;
+$color-subtitle: #f9004d;
+$color-lightn: #c4cfde;
+$color-light: #E4E6EA;
+$color-body: #878e99;
+
+// Typography
+$font-family-primary: "Poppins", sans-serif;
+$font-family-secondary: "Poppins-Regular", sans-serif;
+
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-base: 1rem;    // 16px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.25rem;   // 20px
+$font-size-2xl: 1.5rem;   // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem;  // 36px
+$font-size-5xl: 3rem;     // 48px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Border Radius
+$border-radius-sm: 0.25rem;  // 4px
+$border-radius-md: 0.5rem;   // 8px
+$border-radius-lg: 0.75rem;  // 12px
+$border-radius-xl: 1rem;     // 16px
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-index
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;

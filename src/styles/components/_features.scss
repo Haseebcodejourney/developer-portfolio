@@ -1,0 +1,116 @@
+// =============================================
+// FEATURES COMPONENT
+// =============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.what-i-do-section {
+  padding: $spacing-3xl 0;
+  background: linear-gradient(135deg, rgba($secondary-color, 0.05) 0%, rgba($accent-color, 0.05) 100%);
+
+  .what-i-do-section-inner {
+    text-align: center;
+
+    span {
+      font-size: $font-size-sm;
+      color: $color-subtitle;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: $font-weight-medium;
+      margin-bottom: $spacing-md;
+      display: block;
+    }
+
+    h2 {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-2xl;
+      @include gradient-text;
+    }
+
+    .box-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $spacing-xl;
+      margin-top: $spacing-2xl;
+
+      .box {
+        @include card-neumorphism;
+        padding: $spacing-2xl;
+        text-align: center;
+        transition: all $transition-normal;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba($secondary-color, 0.2);
+
+          span svg {
+            transform: rotate(360deg);
+          }
+        }
+
+        span {
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+          @include flex-center;
+          background: linear-gradient(135deg, $secondary-color, $accent-color);
+          border-radius: 50%;
+          margin-bottom: $spacing-lg;
+          color: white;
+          transition: transform $transition-slow;
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        h3 {
+          font-size: $font-size-xl;
+          font-weight: $font-weight-semibold;
+          margin-bottom: $spacing-md;
+          color: var(--primary-color);
+        }
+
+        p {
+          color: $color-body;
+          line-height: 1.6;
+          margin-bottom: $spacing-lg;
+        }
+
+        span:last-child {
+          display: inline-block;
+          transition: transform $transition-normal;
+
+          svg {
+            width: 20px;
+            height: 20px;
+            color: $secondary-color;
+          }
+
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+
+  // Dark theme adjustments
+  .theme-dark & {
+    .box {
+      @include card-neumorphism-dark;
+
+      h3 {
+        color: var(--text-color);
+      }
+
+      p {
+        color: $color-body;
+      }
+    }
+  }
+}
