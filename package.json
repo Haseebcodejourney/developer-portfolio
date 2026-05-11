@@ -13,9 +13,7 @@
     "bootstrap": "^5.3.8",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-lazy-load-image-component": "^1.6.3",
-    "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1"
+    "react-lazy-load-image-component": "^1.6.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

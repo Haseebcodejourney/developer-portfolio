@@ -570,12 +570,10 @@
     &:hover{
       color: var(--color-primary);
     }
-    &::after{
-      ::after {
-        background: linear-gradient(to right bottom, #212428, #16181c);
-        opacity: 0;
-        z-index: -1;
-    }
+    &::after {
+      background: linear-gradient(to right bottom, #212428, #16181c);
+      opacity: 0;
+      z-index: -1;
     }
   }
 }
