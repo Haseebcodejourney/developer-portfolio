@@ -1,6 +1,3 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/_clients.scss";
 
 const Clients = () => {
@@ -55,30 +52,12 @@ const Clients = () => {
     </svg>
   );
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
-
   return (
     <section className="container testimonial-wrapper" id="clients">
       <span>What Clients Say</span>
       <h3>Testimonial</h3>
 
-      <Slider {...settings} className="single-item">
+      <div className="single-item">
         {reviews.map((review, index) => (
           <div key={index}>
             <div className="testiminial-inner-wrapper">
@@ -131,7 +110,7 @@ const Clients = () => {
             </div>
           </div>
         ))}
-      </Slider>
+      </div>
     </section>
   );
 };
