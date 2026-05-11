@@ -1,0 +1,60 @@
+# Deploys the production build to Netlify on every push to main/master.
+#
+# One-time setup (you must do this in the browser — we cannot log in as you):
+# 1) Netlify: https://app.netlify.com/user/applications → New access token → copy it
+# 2) Netlify: create any site (empty is fine) → Site settings → Site details → copy Site ID
+# 3) GitHub repo → Settings → Secrets and variables → Actions → New repository secret:
+#      NETLIFY_AUTH_TOKEN   = (paste token)
+#      NETLIFY_SITE_ID      = (paste site ID)
+# 4) Push to main — this workflow runs and publishes dist/ to that site.
+#
+# Do NOT set VITE_BASE_PATH here (site is served from Netlify root /).
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: netlify-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Check Netlify secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::Add repository secrets NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID (see DEPLOY.md → Option A)."
+            exit 1
+          fi
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli deploy --dir=dist --prod

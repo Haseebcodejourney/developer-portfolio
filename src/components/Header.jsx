@@ -4,6 +4,7 @@ const logoUrl = new URL('../assets/images/Saleem Logo.svg', import.meta.url).hre
 
 const Header = ({ theme }) => {
   const navbarColorScheme = theme === 'dark' ? 'navbar-dark' : 'navbar-light';
+  const homeHref = import.meta.env.BASE_URL;
 
   return (
     <header>
@@ -13,7 +14,7 @@ const Header = ({ theme }) => {
       >
         <div className="container-fluid header-inner-wrapper">
           {/* Logo */}
-          <a className="navbar-brand" href="/" aria-label="logo">
+          <a className="navbar-brand" href={homeHref} aria-label="logo">
             <img
               src={logoUrl}
               alt="Logo"
@@ -54,7 +55,7 @@ const Header = ({ theme }) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href={homeHref}>
                   Home
                 </a>
               </li>
