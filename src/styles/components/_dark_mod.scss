@@ -19,7 +19,10 @@
 
     /* Add more variables as needed */
   }
-  
+
+/* Dark UI overrides apply only when the document root has .theme-dark (see App.jsx). */
+.theme-dark {
+
   /* Global styling for dark mode */
   * {
     -webkit-box-sizing: border-box;
@@ -731,4 +734,6 @@
           background: #ff014f;
       }
   }
+}
+
 }

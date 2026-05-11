@@ -10,13 +10,28 @@ import Contact from './Contact';
 import Footer from './Footer';
 import WhatIDo from './WhatIDo';
 
+const THEME_STORAGE_KEY = 'theme';
+
+function readInitialTheme() {
+  if (typeof window === 'undefined') return 'light';
+  const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+  if (stored === 'light' || stored === 'dark') return stored;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
 const App = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(readInitialTheme);
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('theme-light', theme === 'light');
     root.classList.toggle('theme-dark', theme === 'dark');
+    root.setAttribute('data-bs-theme', theme === 'dark' ? 'dark' : 'light');
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      /* ignore quota / private mode */
+    }
   }, [theme]);
 
   const toggleTheme = () => {
@@ -28,8 +43,8 @@ const App = () => {
   };
 
   return (
-    <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'}>
-      <Header />
+    <div className="app-root">
+      <Header theme={theme} />
       <Hero />
       <WhatIDo />
       <Portfolio />
@@ -43,9 +58,14 @@ const App = () => {
           onClick={toggleTheme}
           id="themeToggle"
           type="button"
+          aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
         >
-          <span className="dark-span">Dark</span>
-          <span className="light-span">Light</span>
+          <span className="dark-span" aria-hidden="true">
+            Dark
+          </span>
+          <span className="light-span" aria-hidden="true">
+            Light
+          </span>
         </button>
       </div>
 

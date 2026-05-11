@@ -2,11 +2,13 @@ import "../styles/components/_header.scss";
 
 const logoUrl = new URL('../assets/images/Saleem Logo.svg', import.meta.url).href;
 
-const Header = () => {
+const Header = ({ theme }) => {
+  const navbarColorScheme = theme === 'dark' ? 'navbar-dark' : 'navbar-light';
+
   return (
     <header>
       <nav
-        className="navbar navbar-expand-lg navbar-light"
+        className={`navbar navbar-expand-lg ${navbarColorScheme}`}
         id="main-header"
       >
         <div className="container-fluid header-inner-wrapper">
