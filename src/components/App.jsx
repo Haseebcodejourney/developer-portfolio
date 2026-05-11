@@ -8,6 +8,7 @@ import Portfolio from './Portfolio';
 import Clients from './Clients';
 import Contact from './Contact';
 import Footer from './Footer';
+import WhatIDo from './WhatIDo';
 
 const App = () => {
   const [theme, setTheme] = useState('light');
@@ -30,6 +31,7 @@ const App = () => {
     <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'}>
       <Header />
       <Hero />
+      <WhatIDo />
       <Portfolio />
       <Clients />
       <Contact />

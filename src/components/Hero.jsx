@@ -1,8 +1,57 @@
+import { useEffect, useRef } from 'react';
 import "../styles/components/_hero.scss";
 
 const heroImageUrl = new URL('../assets/images/main-img.webp', import.meta.url).href;
 
 const Hero = () => {
+  const autoTypingRef = useRef(null);
+
+  useEffect(() => {
+    const textArray = ["Developer.", "Professional Coder."];
+    const typingSpeed = 100;
+    let textIndex = 0;
+    let charIndex = 0;
+    let timeoutId = null;
+    const textElement = autoTypingRef.current;
+
+    if (!textElement) {
+      return undefined;
+    }
+
+    textElement.textContent = '';
+
+    const type = () => {
+      if (!textElement) return;
+      if (charIndex < textArray[textIndex].length) {
+        textElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex += 1;
+        timeoutId = window.setTimeout(type, typingSpeed);
+      } else {
+        timeoutId = window.setTimeout(erase, typingSpeed * 2);
+      }
+    };
+
+    const erase = () => {
+      if (!textElement) return;
+      if (charIndex > 0) {
+        textElement.textContent = textElement.textContent.slice(0, -1);
+        charIndex -= 1;
+        timeoutId = window.setTimeout(erase, typingSpeed / 2);
+      } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        timeoutId = window.setTimeout(type, typingSpeed);
+      }
+    };
+
+    type();
+
+    return () => {
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
+
   return (
     <section className="container main-section" id="main-section">
       <div className="row main-section-inner">
@@ -12,7 +61,7 @@ const Hero = () => {
               <span className="subtitle">Welcome to my world</span>
               <h1 className="title">
                 Hi, I’m <span>Jone Lee</span>
-                <br />a <span id="auto-typing-text"></span>
+                <br />a <span id="auto-typing-text" ref={autoTypingRef}></span>
               </h1>
               <div className="description">
                 <p>

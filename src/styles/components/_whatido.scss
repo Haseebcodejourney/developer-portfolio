@@ -1,0 +1,268 @@
+.what-i-do-section {
+  padding: 100px 12px;
+  position: relative;
+
+  .what-i-do-section-inner {
+    text-align: left;
+    span {
+      color: #f9004d;
+      letter-spacing: 2px;
+      display: block;
+      line-height: 14px;
+      font-weight: 500;
+      padding-bottom: 15px;
+    }
+
+    h2 {
+      margin: 0px;
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #3c3e41;
+      padding-bottom: 50px;
+    }
+
+    .box-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+           margin-top: 0px !important;
+
+      .box {
+        padding: 35px 50px 35px 50px;
+        background: linear-gradient(145deg, #e2e8ec, #ffffff);
+        box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+        max-width: 401px;
+        width: 100%;
+        height: 346px;
+        border-radius: 10px;
+        text-align: left;
+
+        span {
+          padding: 0px;
+          margin-bottom: 29px;
+          background: transparent;
+
+          svg {
+            width: 50px;
+            height: auto;
+            color: #f9004d;
+            stroke-width: 1 !important;
+          }
+
+          &:last-child {
+            svg {
+              &:last-child {
+                visibility: hidden;
+                width: 18px;
+                height: 32px;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+
+        h3 {
+          font-family: #f9004d;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 28px;
+          color: #3c3e41;
+          margin-bottom: 22px;
+          transition: 0.4s;
+        }
+
+        &:hover {
+          text-decoration: none;
+          outline: none;
+          color: #f9004d;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: linear-gradient(145deg, #ff014f, #d11414);
+          opacity: 1;
+          box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+          transition: 0.5s all ease-in-out;
+          transition: 0.4s;
+
+          span {
+            svg {
+              color: #fff;
+              stroke-width: 1 !important;
+            }
+
+            &:last-child {
+              fill: #fff;
+              svg{
+                visibility: visible;
+              }
+            }
+          }
+
+          h3 {
+            color: #ffffff;
+          }
+
+          p {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+  }
+
+  &::after {
+    position: absolute;
+    max-width: 1270px;
+    height: 1px;
+    background: #878e992e;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+//For Section What I do Responsiveness
+@media (max-width: 991px) {
+  .what-i-do-section {
+    padding: 80px 15px 80px 15px;
+    position: relative;
+    max-width: 1320px;
+    width: 100%;
+    .what-i-do-section-inner {
+      span {
+        color: #f9004d;
+        line-height: 14px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0px;
+        font-size: 34px;
+        color: #3c3e41;
+        padding-bottom: 40px;
+        text-align: center;
+      }
+
+      .box-wrapper {
+        gap: 30px;
+        text-align: left;
+   
+        .box {
+          padding: 25px 20px 20px 20px !important;
+          background: linear-gradient(145deg, #e2e8ec, #ffffff);
+          box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+          height: auto;
+          text-align: left;
+
+          span {
+            padding: 0px;
+            margin-bottom: 10px;
+            text-align: left;
+
+            svg {
+              width: 50px;
+              height: auto;
+              color: #f9004d;
+              stroke-width: 1 !important;
+            }
+
+            &:last-child {
+              svg {
+                display: block;
+                transition: 0.4s;
+                &:last-child {
+                  width: 18px;
+                  height: 18px;
+                  transform: rotate(180deg);
+                }
+              }
+            }
+          }
+
+          h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: left;
+          }
+
+          p {
+            font-size: 16px;
+            color: #3c3e41;
+            margin-bottom: 22px;
+            text-align: left;
+          }
+
+          &:hover {
+            text-decoration: none;
+            outline: none;
+            color: #f9004d;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background: linear-gradient(145deg, #ff014f, #d11414);
+            opacity: 1;
+            box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+            transition: 0.5s all ease-in-out;
+            transition: 0.4s;
+
+            span {
+              svg {
+                color: #fff;
+                stroke-width: 1 !important;
+              }
+
+              &:last-child {
+                fill: #fff;
+        
+              }
+            }
+
+            h3 {
+              color: #ffffff;
+            }
+
+            p {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+    }
+
+    &::after {
+      position: absolute;
+      max-width: 1270px;
+      height: 1px;
+      background: #878e992e;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+@media (min-width: 761px) and (max-width: 991px ) {
+  .what-i-do-section .what-i-do-section-inner .box-wrapper .box{
+    max-width: unset;
+    width: 100%;
+  }
+  .intro-section{
+    width: 100%;
+  }
+}
