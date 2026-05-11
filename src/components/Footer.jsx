@@ -4,7 +4,7 @@ const Footer = () => {
   return (
 <section className="container inbio-wrapper">
       <figure>
-        <img data-src="assets/images/Saleem Logo.svg" alt="Footer Logo" width="78" height="35" className="lazy-load" />
+        <img src={logoUrl} alt="Footer Logo" width="78" height="35" className="lazy-load" />
       </figure>
       <div className="inbio-text">
         <p>© 2026. All rights reserved by
