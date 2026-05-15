@@ -74,7 +74,7 @@ const Header = ({ theme }) => {
 
               <li className="nav-item">
                 <a className="nav-link" href="#clients">
-                  Clients
+                  Background
                 </a>
               </li>
 
@@ -85,7 +85,12 @@ const Header = ({ theme }) => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link-btn" id="downloadButton" href="#">
+                <a
+                  className="nav-link-btn"
+                  id="downloadButton"
+                  href={`${import.meta.env.BASE_URL}resume.png`}
+                  download="Muhammad_Nawaz_Resume.png"
+                >
                   RESUME
                 </a>
               </li>

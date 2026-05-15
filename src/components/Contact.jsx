@@ -1,3 +1,5 @@
+import { profile } from '../data/profile';
+
 const Contact = () => {
   const contactImageUrl = new URL('../assets/images/contact-us-img.webp', import.meta.url).href;
 
@@ -17,21 +19,22 @@ const Contact = () => {
               loading="lazy"
             />
           </figure>
-          <h4>Nevine Acotanza</h4>
-          <p>Chief Operating Officer</p>
-          <p>I am available for freelance work. Connect with me via and call in to my account.</p>
+          <h4>{profile.name}</h4>
+          <p>{profile.title}</p>
+          <p>{profile.location}</p>
+          <p>I am available for freelance work and professional opportunities. Connect with me via phone, email, or WhatsApp.</p>
           <p>
-            <a href="tel:+01234567890" aria-describedby="phone-description">
-              Phone: +01234567890
+            <a href={`tel:${profile.phone}`} aria-describedby="phone-description">
+              Phone: {profile.phone}
             </a>
             <span id="phone-description" className="sr-only">
-              Phone number for contact: +01234567890
+              Phone number for contact: {profile.phone}
             </span>
-            <a href="mailto:admin@example.com" aria-describedby="email-description">
-              Email: admin@example.com
+            <a href={`mailto:${profile.email}`} aria-describedby="email-description">
+              Email: {profile.email}
             </a>
             <span id="email-description" className="sr-only">
-              Email address for contact: admin@example.com
+              Email address for contact: {profile.email}
             </span>
           </p>
           <div className="icons-wrapper">
@@ -56,7 +59,7 @@ const Contact = () => {
                 </a>
               </span> */}
               <span>
-                <a href="#" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -76,7 +79,7 @@ const Contact = () => {
                 </a>
               </span>
               <span>
-                <a href="#" aria-label="WhatsApp">
+                <a href={`https://wa.me/${profile.phone.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" aria-label="WhatsApp">
                   <svg
                     fill="#000000"
                     height="24px"

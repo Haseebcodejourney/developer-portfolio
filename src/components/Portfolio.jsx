@@ -1,45 +1,17 @@
+import { profile } from '../data/profile';
 import "../styles/components/_portfolio.scss";
 
+const projectImages = [
+  new URL('../assets/images/development-portfolio-img.webp', import.meta.url).href,
+  new URL('../assets/images/Application-porfolio-img.webp', import.meta.url).href,
+];
+
 const Portfolio = () => {
-  const portfolioItems = [
-    {
-      id: "openModalBtn",
-      title: "Development",
-      image: new URL('../assets/images/development-portfolio-img.webp', import.meta.url).href,
-      subtitle: "The services provide for design",
-      label: "600",
-    },
-    {
-      title: "Application",
-      image: new URL('../assets/images/Application-porfolio-img.webp', import.meta.url).href,
-      subtitle: "Mobile app landing design & app",
-      label: "600",
-    },
-    {
-      title: "Photoshop",
-      image: new URL('../assets/images/photoshop-portfolio-img.webp', import.meta.url).href,
-      subtitle: "Logo design creativity & Application",
-      label: "600",
-    },
-    {
-      title: "Figma",
-      image: new URL('../assets/images/Figma-portfolio-img.webp', import.meta.url).href,
-      subtitle: "Mobile app landing design & Services",
-      label: "600",
-    },
-    {
-      title: "Web Design",
-      image: new URL('../assets/images/webdesign-portfolio-img.webp', import.meta.url).href,
-      subtitle: "Design for technology & services",
-      label: "600",
-    },
-    {
-      title: "Web Design",
-      image: new URL('../assets/images/webdesign-portfolio-img2.webp', import.meta.url).href,
-      subtitle: "App for technology & services",
-      label: "600",
-    },
-  ];
+  const portfolioItems = profile.projects.map((project, index) => ({
+    ...project,
+    image: projectImages[index],
+    label: project.category,
+  }));
 
   return (
     <section className="container my-portfolio" id="portfolio">
@@ -47,8 +19,8 @@ const Portfolio = () => {
       <h3>My Portfolio</h3>
 
       <div className="cards-wrapper">
-        {portfolioItems.map((item, index) => (
-          <div className="cards" id={item.id} key={index}>
+        {portfolioItems.map((item) => (
+          <div className="cards" key={item.title}>
             <figure>
               <img
                 src={item.image}
@@ -60,7 +32,7 @@ const Portfolio = () => {
             </figure>
             <div className="detail-wrapper">
               <div className="detail">
-                <span>{item.title}</span>
+                <span>{item.category}</span>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +54,7 @@ const Portfolio = () => {
               </div>
 
               <strong>
-                {item.subtitle}
+                {item.title}: {item.subtitle}
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
