@@ -1,10 +1,10 @@
-const logoUrl = new URL('../assets/images/Saleem Logo.svg', import.meta.url).href;
+const logoUrl = new URL('../assets/images/Nawaz Logo.svg', import.meta.url).href;
 
 const Footer = () => {
   return (
 <section className="container inbio-wrapper">
       <figure>
-        <img src={logoUrl} alt="Footer Logo" width="78" height="35" className="lazy-load" />
+        <img src={logoUrl} alt="Nawaz Logo" width="78" height="35" className="lazy-load" />
       </figure>
       <div className="inbio-text">
         <p>© 2026. All rights reserved by

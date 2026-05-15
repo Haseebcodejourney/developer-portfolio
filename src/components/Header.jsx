@@ -1,6 +1,6 @@
 import "../styles/components/_header.scss";
 
-const logoUrl = new URL('../assets/images/Saleem Logo.svg', import.meta.url).href;
+const logoUrl = new URL('../assets/images/Nawaz Logo.svg', import.meta.url).href;
 
 const Header = ({ theme }) => {
   const navbarColorScheme = theme === 'dark' ? 'navbar-dark' : 'navbar-light';
@@ -14,10 +14,10 @@ const Header = ({ theme }) => {
       >
         <div className="container-fluid header-inner-wrapper">
           {/* Logo */}
-          <a className="navbar-brand" href={homeHref} aria-label="logo">
+          <a className="navbar-brand" href={homeHref} aria-label="Nawaz logo">
             <img
               src={logoUrl}
-              alt="Logo"
+              alt="Nawaz Logo"
               width="139"
               height="35"
               className="lazy-load"

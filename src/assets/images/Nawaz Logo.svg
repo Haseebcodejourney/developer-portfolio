@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 35">
+  <defs>
+    <linearGradient id="nawaz-gradient" x1="0" y1="17.5" x2="122" y2="17.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4758dd" />
+      <stop offset="0.44" stop-color="#6a52e6" />
+      <stop offset="1" stop-color="#864eee" />
+    </linearGradient>
+  </defs>
+  <circle fill="#a17dee" cx="136.29" cy="3.71" r="3.71" />
+  <text
+    x="4"
+    y="26"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="24"
+    font-weight="700"
+    letter-spacing="0.5"
+    fill="url(#nawaz-gradient)"
+  >
+    Nawaz
+  </text>
+</svg>
